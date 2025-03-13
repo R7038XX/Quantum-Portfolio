@@ -28,7 +28,7 @@ from pyomo.opt import SolverFactory
 # FixstarsAmplify AE トークン
 # 実行マシンクライアントの設定
 client = FixstarsClient()
-client.token = AMPLIFY_TOKEN
+client.token = st.secrets["AMPLIFY_TOKEN"]
 # タイムアウト1秒
 client.parameters.timeout = timedelta(seconds=10)
 
