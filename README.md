@@ -1,19 +1,77 @@
-# 🎈 Blank app template
+# Financial Portfolio Optimizer
 
-A simple Streamlit app template for you to modify!
+金融ポートフォリオを最適化するStreamlitアプリケーションです。家族構成や収入に基づいて、最適な投資ポートフォリオを提案します。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## 🌟 主な機能
 
-### How to run it on your own machine
+- **世帯情報分析**: 家族構成と年収に基づいて投資予算を算出
+- **リスク選好設定**: ハイリスク・ハイリターンまたはローリスク・ローリターンの選択
+- **投資期間設定**: 1年から10年の範囲で算定期間を設定可能
+- **現在の資産管理**: 保有している株式の入力と管理
+- **市場選択**:
+  - 対応市場：日本、米国、香港、中国、シンガポール、豪州、カナダ、マレーシア
+  - 各市場の詳細な区分（例：東証プライム、ナスダックなど）
+- **ポートフォリオ最適化**:
+  - 予算内での最適な銘柄選択
+  - 株数配分の自動計算
+  - リスク選好に基づく最適化
 
-1. Install the requirements
+## 📋 必要条件
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+- Python 3.7以上
+- pip（Pythonパッケージマネージャー）
 
-2. Run the app
+## 🚀 インストール方法
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+1. リポジトリをクローン
+```bash
+git clone <repository-url>
+cd Quantum-Portfolio
+```
+
+2. 必要なパッケージをインストール
+```bash
+pip install -r requirements.txt
+```
+
+3. Amplify APIトークンの設定
+   - [Amplify](https://amplify.fixstars.com/)でアカウントを作成
+   - APIトークンを取得
+   - `.streamlit/secrets.toml`ファイルを作成し、以下の内容を追加：
+```toml
+AMPLIFY_TOKEN = "your-api-token"
+```
+
+## 💻 使用方法
+
+1. アプリケーションの起動
+```bash
+streamlit run streamlit_app.py
+```
+
+2. ブラウザで表示されるインターフェースに従って：
+   - 世帯情報を入力
+   - リスク選好を設定
+   - 算定期間を選択
+   - 現在保有している資産を入力（任意）
+   - 投資したい市場を選択
+   - 「計算」ボタンをクリックして最適なポートフォリオを表示
+
+## 📊 結果の見方
+
+計算結果には以下の情報が含まれます：
+- 選択された銘柄名
+- 1株あたりの価格
+- 推奨購入株数
+- 各銘柄の購入に必要な金額
+- ポートフォリオ全体の合計金額
+
+## 🔒 データセキュリティ
+
+- すべての計算はローカル環境で実行
+- 個人情報は外部に送信されません
+- 株価データは安全な方法で取得・処理されます
+
+## 📜 ライセンス
+
+このプロジェクトはMITライセンスの下で公開されています。詳細は[LICENSE](LICENSE)ファイルをご覧ください。
